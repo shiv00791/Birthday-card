@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy Birthday</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans-serif;
+      background-color: #fce4ec;
+      color: #880e4f;
+      padding-top: 100px;
+    }
+    #birthday-message {
+      display: none;
+      font-size: 2em;
+    }
+    #name-form input {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #name-form button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #f06292;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="name-form">
+    <h2>Enter your name 🎂</h2>
+    <input type="text" id="nameInput" placeholder="Your Name">
+    <button onclick="showBirthday()">Submit</button>
+  </div>
+
+  <div id="birthday-message">
+    <h1 id="greeting"></h1>
+    <p>Wishing you all the love, joy, and cake in the world! 🎉🎁🎈</p>
+  </div>
+
+  <script>
+    function showBirthday() {
+      const name = document.getElementById("nameInput").value;
+      if(name.trim() === "") return;
+      document.getElementById("name-form").style.display = "none";
+      document.getElementById("birthday-message").style.display = "block";
+      document.getElementById("greeting").textContent = Happy Birthday, ${name}! 🎉;
+    }
+  </script>
+
+</body>
+</html>
